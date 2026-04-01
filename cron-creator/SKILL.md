@@ -88,7 +88,7 @@ required_files:
 综合以上 4 个步骤，最终生成的指令结构如下（请根据实际情况组合参数）：
 
 ### 示例 1：一次性任务（飞书多 Agent 环境群聊）
-**场景**：用户在飞书（多Agent环境，account为`assistant_01`）要求“明早8点提醒我开早会”。
+**场景**：用户在飞书（多Agent环境，account为`assistant`）要求“明早8点提醒我开早会”。
 ```bash
 openclaw cron add \
   --name "morning_meeting_reminder" \
