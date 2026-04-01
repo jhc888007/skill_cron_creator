@@ -1,9 +1,17 @@
 ---
 name: cron-creator
 description: 【针对飞书优化】定时任务创建指引，专门针对飞书、尤其是多 Agent 场景进行优化，解决定时任务不稳定问题。
+required_tools:
+  - openclaw CLI
+  - read
+required_files:
+  - openclaw.json
+  - current_chat_context (user_id/chat_id)
 ---
 
-# 🤖 Skill: 定时任务创建专家
+# 🤖 定时任务创建专家
+
+声明：本工具依赖 openclaw CLI 执行任务。在执行命令前，你可能需要通过上下文或 `read` 工具获取 `user_id`/`chat_id` 以及 `openclaw.json` 中的多 Agent 配置 (`channels.feishu.accounts`)。这些信息是配置飞书定时任务中的必要参数。**如果你发现自己当前没有权限读取这些信息，或者上下文中缺失这些信息，请务必先向用户询问补全，绝不可自行编造。**
 
 ## 🎯 应用场景与触发条件
 当用户表达出需要在未来某个时间点或按照特定周期进行提醒、执行任务时触发。
@@ -53,6 +61,7 @@ description: 【针对飞书优化】定时任务创建指引，专门针对飞�
         * 飞书私聊 -> 提取当前对话中机器人对应用户的 `user_id`（以 `ou_` 开头）。
         * 飞书群聊 -> 提取当前群聊对应的 `chat_id`（以 `oc_` 开头）。
     * 检查 `openclaw.json` -> `channels.feishu` 下是否有 `accounts` 字段（有则为**多 Agent**，无则为**单 Agent**）。
+    **注意：这里如果不获取 id / 不读取 openclaw.json，则无法正确触发定时任务。**
 3.  若为后台触发或者非飞书 IM 渠道按其对应默认规则处理。
 
 根据上述判断，生成对应的目标参数集：
