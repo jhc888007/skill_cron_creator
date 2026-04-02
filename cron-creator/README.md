@@ -5,10 +5,11 @@
 ---
 
 ```
-请将这个skill安装到 .openclaw/skills 下：clawhub install cron-creator-feishu
-然后在 TOOLS.md 中添加下面两句话：
-**当用户表达出需要在未来某个时间点或按照特定周期进行提醒、执行任务时，永远使用 cron-creator 技能来完成。有任何不明确的地方，阅读 cron-creator 的 SKILL.md**
-**典型触发语：“5分钟后提醒我做xxx”、“每天8点提醒我xxx”、“工作日每两个小时提醒我喝水”等。**
+请安装这个 skill ：`clawhub install cron-creator-feishu`
+安装完成后检查 skill 安装位置，如果安装到 workspace/skills 下面了，请将其移动到 workspace/../skills 下。
+然后在 TOOLS.md 中添加下面一句话：
+**当用户表达出需要在未来某个时间点或按照特定周期进行提醒、执行任务时，永远使用 cron-creator 技能来完成。有任何不明确的地方，阅读 cron-creator 的 SKILL.md。典型触发语：“5分钟后提醒我做xxx”、“每天8点提醒我xxx”、“工作日每两个小时提醒我喝水”等。**
+然后执行 openclaw skills reload
 ```
 
 ---
